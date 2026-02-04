@@ -995,3 +995,32 @@ fieldset {
   padding: 1rem;
   will-change: transform;
 }
+
+#contact.section {
+    min-height: auto;
+    height: auto;
+    overflow: visible;
+    padding-bottom: 80px;
+}
+
+.section::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.section {
+  padding: 60px 0; /* adjust as you like */
+}
+
+#focus .focus-block::before,
+#focus .focus-block h4::before {
+  content: none !important;
+}
+
+#focus .focus-block {
+  display: block;       /* in case it’s being styled as list-item */
+  list-style: none;
+  padding-left: 0;
+}
+

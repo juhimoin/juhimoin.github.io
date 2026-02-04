@@ -1,14 +1,14 @@
 // JavaScript Document
 
-$(window).load(function () {
-    "use strict";
+//$(window).load(function () {
+    //"use strict";
     // makes sure the whole site is loaded
-    $('#status').fadeOut(); // will first fade out the loading animation
-    $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
-    $('body').delay(350).css({
-        'overflow': 'visible'
-    });
-})
+    //$('#status').fadeOut(); // will first fade out the loading animation
+    //$('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
+    //$('body').delay(350).css({
+    //    'overflow': 'visible'
+  //  });
+//})
 
 $(document).ready(function () {
     "use strict";
@@ -104,19 +104,24 @@ $(document).ready(function () {
     });
 
     //animatedModal
-    $("#demo01").animatedModal();
-    $("#demo02").animatedModal2();
-    $("#demo03").animatedModal3();
-    $("#demo04").animatedModal4();
-    $("#demo05").animatedModal5();
-    $("#demo06").animatedModal6();
-    $("#demo07").animatedModal7();
-    $("#demo08").animatedModal8();
-    $("#demo09").animatedModal9();
-    $("#demo10").animatedModal10();
-    $("#demo11").animatedModal11();
-    $("#demo12").animatedModal12();
-    $("#demo13").animatedModal13();
+
+    $('[id^="demo"]').each(function () {
+    $(this).animatedModal();
+});
+
+    //$("#demo01").animatedModal();
+   // $("#demo02").animatedModal2();
+    //$("#demo03").animatedModal3();
+    //$("#demo04").animatedModal4();
+    //$("#demo05").animatedModal5();
+    //$("#demo06").animatedModal6();
+    //$("#demo07").animatedModal7();
+    //$("#demo08").animatedModal8();
+    //$("#demo09").animatedModal9();
+    //$("#demo10").animatedModal10();
+    //$("#demo11").animatedModal11();
+    //$("#demo12").animatedModal12();
+    //$("#demo13").animatedModal13();
 
     // Contact Form 	
 
@@ -190,14 +195,37 @@ VanillaTilt.init(document.querySelectorAll(".tilt-card"), {
 
 
 // in custom.js
-VANTA.FOG({
-  el: "#insta",
-  mouseControls: true,
-  touchControls: false,
-  gyroControls: false,
-  minHeight: 200.00,
-  scale: 1.0,
-  color: 0x222222,
-  backgroundColor: 0x0f0f12,
-  spacing: 30.00
+
+var instaEl = document.getElementById("insta");
+if (instaEl) {
+    VANTA.FOG({
+        el: instaEl,
+        mouseControls: true,
+        touchControls: false,
+        gyroControls: false,
+        minHeight: 200.0,
+        scale: 1.0,
+        color: 0x222222,
+        backgroundColor: 0x0f0f12,
+        spacing: 30.0
+    });
+}
+
+//VANTA.FOG({
+  //el: "#insta",
+  //mouseControls: true,
+  //touchControls: false,
+  //gyroControls: false,
+  //minHeight: 200.00,
+  //scale: 1.0,
+  //color: 0x222222,
+  //backgroundColor: 0x0f0f12,
+  //spacing: 30.00
+//});
+
+window.addEventListener('load', function () {
+    var preloader = document.getElementById('preloader');
+    if (preloader) {
+        preloader.style.display = 'none';
+    }
 });
