@@ -1024,3 +1024,105 @@ fieldset {
   padding-left: 0;
 }
 
+/* Case study / modal content readability fix
+==================================================*/
+
+.modal-content {
+    background: #fff;
+    padding: 60px 0;
+}
+
+/* Let Bootstrap's col-md-8 col-md-offset-2 handle column width.
+   Just style the typography inside it. */
+
+.modal-content .col-md-8 p,
+.modal-content .col-md-8 h2,
+.modal-content .col-md-8 h3 {
+    line-height: 1.7;
+}
+
+.modal-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    line-height: 1.3;
+    margin-bottom: 0.8em;
+}
+
+.modal-content h3 {
+    font-family: 'Lato', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #425BB5;
+    margin-top: 2.5em;
+    margin-bottom: 0.75em;
+    line-height: 1.4;
+}
+
+.modal-content p {
+    margin-bottom: 1.2em;
+    color: #333;
+    font-size: 15px;
+}
+
+.modal-content p strong:first-child {
+    color: #425BB5;
+    text-transform: uppercase;
+    font-size: 0.85em;
+    letter-spacing: 0.08em;
+    display: inline-block;
+    margin-right: 0.4em;
+}
+
+.modal-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 2em auto;
+}
+
+@media (max-width: 768px) {
+    .modal-content h2 {
+        font-size: 28px;
+    }
+}
+
+/* Force white background on popup modals
+==================================================*/
+
+.popup-modal,
+.popup-modal .modal-content,
+#animatedModal,
+#animatedModal2,
+#animatedModal3,
+#animatedModal4,
+#animatedModal5,
+#animatedModal6,
+#animatedModal7,
+#animatedModal8,
+#animatedModal9,
+#animatedModal10,
+#animatedModal11,
+#animatedModal12,
+#animatedModal13 {
+    background-color: #ffffff !important;
+}
+
+.popup-modal {
+    min-height: 100vh;
+    background-color: #ffffff !important;
+}
+
+.modal-content h2 {
+    font-size: 32px;        /* down from 36px */
+    line-height: 1.25;
+    margin-bottom: 1em;
+    max-width: 90%;         /* prevents very long titles wrapping awkwardly */
+}
+
+.modal-content p {
+    text-align: left;       /* explicit, in case anything was overriding it */
+    hyphens: none;          /* prevent mid-word breaks */
+    word-spacing: normal;
+    line-height: 1.7;
+    margin-bottom: 1.4em;   /* slightly more breathing room between paragraphs */
+}
